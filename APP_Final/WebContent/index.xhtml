@@ -1,0 +1,159 @@
+<ui:composition template="/WEB-INF/templates/geral.xhtml"
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+	 	xmlns:ui="http://java.sun.com/jsf/facelets"
+	 	xmlns:f="http://java.sun.com/jsf/core">
+
+	<f:view locale="#{localeController.currentLocale}"/>
+	<ui:define name="conteudo">
+	
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+        <h:graphicImage library="img" name="paisagem1.png" />
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>
+              <h:outputText value="#{msg.add}" />
+              </h1>
+              <p class="lead">
+              <h:outputText value="#{msg.slide1}" />
+              </p>
+              <h:form>
+              <h:commandButton action="/app/insere" value="#{msg.add}" class="btn btn-large btn-primary" />
+              </h:form>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <h:graphicImage library="img" name="paisagem2.png" />
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>
+              <h:outputText value="#{msg.list_contacts}" />
+              </h1>
+              <p class="lead">
+               <h:outputText value="#{msg.slide1}" />
+              </p>
+              <h:form>
+              <h:commandButton action="/app/lista" value="#{msg.list_contacts}" class="btn btn-large btn-primary" />
+              </h:form>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <h:graphicImage library="img" name="paisagem3.png" />
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>
+              <h:outputText value="#{msg.crud}" />
+              </h1>
+              <p class="lead">
+              <h:outputText value="#{msg.marcio}" />
+              </p>
+              <h:form>
+              <h:commandButton action="/app/insere" value="#{msg.add}" class="btn btn-large btn-primary" />
+              </h:form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="arrowright"></div>
+       <a class="left carousel-control" href="#myCarousel" data-slide="prev"></a>
+   
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"></a>
+      <!-- 
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+       -->
+    </div><!-- /.carousel -->
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span4">
+        <h:graphicImage library="img" name="img1.jpg" class="img-circle"/>
+          
+          <h2>
+          <h:outputText value="#{msg.contatos}" />
+          </h2>
+          
+          <h:outputText value="#{msg.msg1}" />
+			
+         <!--  <p><a class="btn" href="#">View details &raquo;</a></p> -->
+        </div><!-- /.span4 -->
+        <div class="span4">
+        <h:graphicImage library="img" name="img2.jpg" class="img-circle"/>
+          
+          <h2>
+          <h:outputText value="#{msg.telefone}" />
+          </h2>
+          <p>
+          <h:outputText value="#{msg.msg2}" />
+			</p>
+         <!--  <p><a class="btn" href="#">View details &raquo;</a></p> -->
+        </div><!-- /.span4 -->
+        <div class="span4">
+        <h:graphicImage library="img" name="img3.png" class="img-circle"/>
+          
+          <h2>
+          <h:outputText value="#{msg.Email}" />
+          </h2>
+          <p>
+          <h:outputText value="#{msg.msg3}" />
+          </p>
+         <!-- <p><a class="btn" href="#">View details &raquo;</a></p> -->
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
+
+
+     
+      <hr class="featurette-divider">
+      </hr>
+	      
+    </div><!-- /.container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+	
+		
+		<blockquote class="pull-right">
+  			<p>CRUD JSF: Lista de Exercicio 06 de WEB</p>
+  			<small>Márcio de Souza Nobre <cite title="Source Title"></cite></small>
+		</blockquote>
+	</ui:define>
+
+</ui:composition>

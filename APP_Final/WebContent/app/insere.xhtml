@@ -1,0 +1,47 @@
+<ui:composition template="/WEB-INF/templates/geral.xhtml"
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+	 	xmlns:ui="http://java.sun.com/jsf/facelets">
+	 	
+	<f:view locale="#{localeController.currentLocale}"/>
+	<ui:define name="conteudo">
+		<h1>
+		<h:outputText value="#{msg.title_insere}" />
+		</h1>
+		<legend></legend>
+		<h:panelGroup rendered="#{facesContext.validationFailed}">
+			<div class="alert alert-info">
+  			<button type="button" class="close" data-dismiss="alert" >
+  			<i class="icon-thumbs-up" >x</i>
+  			</button>
+  			<strong>Sinto Muito!!!</strong> O preenchimento dos campos é necessário ..
+  			
+		</div>
+		
+		</h:panelGroup>
+		<h:form>
+				
+		<h:panelGrid columns="3">
+			<h:outputLabel for="Nome" value="#{msg.nome}" /> 
+			<h:inputText id="nome" label="nome" required="true" value="#{contatosBean.contato.nome}" 
+			requiredMessage="O preenchimento do campo Nome é necessário!!!"/> <h:message for="nome" class="red"/>
+			<h:outputLabel for="Email" value="#{msg.Email}" />
+			<h:inputText id="email" label="email" required="true" value="#{contatosBean.contato.email}" 
+			requiredMessage="O preenchimento do campo Email é necessario!!!" /> <h:message for="email" class="red"/>
+			<h:outputLabel for="Telefone" value="#{msg.telefone}" />
+			<h:inputText id="telefone" label="telefone" required="true" maxlength="10" value="#{contatosBean.contato.telefone}"	requiredMessage="O campo é necessario!!!"/> <h:message for="telefone" class="red"/>
+			<h:outputLabel for="data" value="#{msg.nasci}" />
+			<h:inputText id="data" label="data" required="true" value="#{contatosBean.contato.data}" maxlength="10"
+			converterMessage="Data Inválida!!! O formato valido é Dia/Mês/Ano">
+			<f:convertDateTime pattern="dd/MM/yyyy"/>
+			</h:inputText> <h:message for="data" class="red"/>
+		</h:panelGrid>
+		<div class="form-actions">
+			<h:commandButton id="Salvar" class="btn btn-inverse" value="#{msg.salvar}" action="#{contatosBean.insere}" />
+		</div>
+		
+		</h:form>
+	</ui:define>
+
+</ui:composition>

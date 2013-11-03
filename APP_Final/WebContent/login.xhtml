@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="bootstrap-responsive.css"></h:outputStylesheet>
+	<h:outputScript library="js" name="jquery.js"></h:outputScript>
+	<h:outputScript library="js" name="bootstrap.js"></h:outputScript>
+	<title>Sistema Agenda</title>
+</h:head>
+<h:body>
+		 		
+	<div class="container">      
+	 <h:form class="form-signin">
+  <fieldset>
+    <div id="legend">
+    <H1>Sistema Agenda</H1><legend class="">Login</legend> </div>
+   
+    <div class="control-group">
+      <!-- Username -->
+      <h:outputLabel value="Username" for="login" />
+      <div class="controls">
+      <h:inputText id="login" label="login" required="true" value="#{login.nome}" placeholder="UserName" class="input-xlarge"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <!-- Password-->
+      <h:outputLabel value="Password" for="password"/>
+      <div class="controls">
+      <h:inputSecret id="password"  laberl="Password" required="true" value="#{login.password}" placeholder="Password" class="input-xlarge"/>
+      </div>
+    </div> 
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <h:commandButton class="btn btn-inverse" value="Sign In" action="#{login.loginBean}" />
+      </div>
+    </div>
+  	</fieldset>
+  
+  </h:form>
+	</div>
+		<div class="container">
+			<h:panelGroup rendered="#{facesContext.validationFailed}">
+	        			<div class="alert alert-error">
+		        		<button type="button" class="close" data-dismiss="alert">x</button>
+		        <strong>Sinto Muito!!!</strong> O preenchimento dos campos abaixo é necessário ..
+       					</div>
+        		</h:panelGroup>
+       </div>
+</h:body>
+</html>
